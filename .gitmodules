@@ -1,0 +1,9 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/bedirhantong/RENART-Backend.git
+[submodule "vendor-panel"]
+	path = vendor-panel
+	url = https://github.com/bedirhantong/renart-vendor-panel.git
+[submodule "online-store"]
+	path = online-store
+	url = https://github.com/bedirhantong/renart-online-store.git
