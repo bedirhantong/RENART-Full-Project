@@ -10,6 +10,7 @@ This repository serves as an umbrella project containing three core components:
 
 ### 🛍️ Online Store (`online-store/`)
 - **Repository**: [renart-online-store](https://github.com/bedirhantong/renart-online-store.git)
+- **Live Demo**: [https://renart-online-store.vercel.app/](https://renart-online-store.vercel.app/)
 - **Technology**: Next.js 14, TypeScript, Tailwind CSS
 - **Purpose**: Customer-facing e-commerce application
 - **Features**:
@@ -24,6 +25,7 @@ This repository serves as an umbrella project containing three core components:
 - **Repository**: [RENART-Backend](https://github.com/bedirhantong/RENART-Backend.git)
 - **Technology**: Node.js, Express, MongoDB
 - **Purpose**: RESTful API serving both frontend applications
+- **Status**: ⚠️ Requires deployment and configuration
 - **Features**:
   - Product management and inventory
   - User authentication and authorization
@@ -36,6 +38,7 @@ This repository serves as an umbrella project containing three core components:
 - **Repository**: [renart-vendor-panel](https://github.com/bedirhantong/renart-vendor-panel.git)
 - **Technology**: React, TypeScript, Material-UI
 - **Purpose**: Vendor dashboard for product and order management
+- **Status**: ⚠️ Requires deployment and backend integration
 - **Features**:
   - Product catalog management
   - Order tracking and fulfillment
@@ -65,7 +68,7 @@ git submodule update --init --recursive
 
 ### Setup Instructions
 
-1. **Backend Setup**
+1. **Backend Setup** ⚠️ **Requires Additional Configuration**
    ```bash
    cd backend
    npm install
@@ -73,8 +76,21 @@ git submodule update --init --recursive
    # Configure your environment variables
    npm run dev
    ```
+   
+   **Required Environment Variables:**
+   - `MONGODB_URI` - MongoDB connection string
+   - `JWT_SECRET` - JWT signing secret
+   - `PORT` - Server port (default: 3001)
+   - `CORS_ORIGIN` - Frontend URL for CORS
+   - `CLOUDINARY_*` - Image upload configuration
+   
+   **Next Steps for Production:**
+   - Deploy to Railway, Heroku, or DigitalOcean
+   - Set up MongoDB Atlas database
+   - Configure Cloudinary for image uploads
+   - Update frontend environment variables with backend URL
 
-2. **Online Store Setup**
+2. **Online Store Setup** ✅ **Currently Deployed**
    ```bash
    cd online-store
    npm install
@@ -82,8 +98,14 @@ git submodule update --init --recursive
    # Configure your environment variables
    npm run dev
    ```
+   
+   **Live Version:** [https://renart-online-store.vercel.app/](https://renart-online-store.vercel.app/)
+   
+   **Note:** Currently using mock data. To connect to backend:
+   - Update `NEXT_PUBLIC_API_URL` in environment variables
+   - Ensure backend is deployed and accessible
 
-3. **Vendor Panel Setup**
+3. **Vendor Panel Setup** ⚠️ **Requires Backend Integration**
    ```bash
    cd vendor-panel
    npm install
@@ -91,6 +113,16 @@ git submodule update --init --recursive
    # Configure your environment variables
    npm start
    ```
+   
+   **Required Environment Variables:**
+   - `REACT_APP_API_URL` - Backend API URL
+   - `REACT_APP_CLOUDINARY_*` - Image upload configuration
+   
+   **Next Steps for Production:**
+   - Deploy to Vercel, Netlify, or similar
+   - Ensure backend API is deployed and accessible
+   - Configure authentication flow with backend
+   - Set up vendor registration and management system
 
 ## Development Workflow
 
@@ -190,11 +222,36 @@ git push origin main
 
 ## Deployment
 
+### Current Status
+- **Online Store**: ✅ Deployed on Vercel - [https://renart-online-store.vercel.app/](https://renart-online-store.vercel.app/)
+- **Backend API**: ⚠️ Not deployed - Required for full functionality
+- **Vendor Panel**: ⚠️ Not deployed - Depends on backend deployment
+
 ### Production Environment
 - **Frontend**: Vercel or Netlify
 - **Backend**: Railway, Heroku, or DigitalOcean
 - **Database**: MongoDB Atlas
 - **CDN**: Cloudinary for image optimization
+
+### Deployment Priority
+To complete the full platform deployment:
+
+1. **Deploy Backend API** (High Priority)
+   - Set up MongoDB Atlas database
+   - Deploy to Railway or similar service
+   - Configure environment variables
+   - Test API endpoints
+
+2. **Deploy Vendor Panel** (Medium Priority)
+   - Deploy to Vercel/Netlify
+   - Connect to deployed backend
+   - Configure authentication
+   - Test vendor workflows
+
+3. **Connect Online Store to Live Backend** (Medium Priority)
+   - Update API URL in online store
+   - Replace mock data with real API calls
+   - Test user authentication and data flow
 
 ### Environment Variables
 Ensure all required environment variables are configured:
@@ -202,6 +259,18 @@ Ensure all required environment variables are configured:
 - JWT secrets
 - API keys for third-party services
 - Frontend/backend URLs
+- Image upload service credentials
+
+## Screenshots
+
+
+| Store Home | Products | Favorites | Dashboard |
+|---|---|---|---|
+| ![Store Home](/screenshots/store_home_0.png) | ![All Products](/screenshots/store_all_products.png) | ![Favorites](/screenshots/store_fav_products.png) | ![Dashboard](/screenshots/dashboard_home.png) |
+
+| Add Product | Store Settings | Database | Home Featured |
+|---|---|---|---|
+| ![Add Product](/screenshots/dashboard_add_product.png) | ![Store Settings](/screenshots/dashboard_store_settings.png) | ![Database](/screenshots/db_tables.png) | ![Home Featured](/screenshots/store_home_1.png) |
 
 ## Support
 
