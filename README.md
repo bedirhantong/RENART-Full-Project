@@ -124,40 +124,6 @@ git submodule update --init --recursive
    - Configure authentication flow with backend
    - Set up vendor registration and management system
 
-## Development Workflow
-
-### Working with Submodules
-
-When making changes to individual components:
-
-```bash
-# Navigate to specific submodule
-cd online-store/
-
-# Make your changes and commit
-git add .
-git commit -m "feat: add new feature"
-git push origin main
-
-# Return to umbrella repo and update submodule reference
-cd ..
-git add online-store
-git commit -m "update: online-store submodule"
-git push origin main
-```
-
-### Updating All Submodules
-
-```bash
-# Pull latest changes for all submodules
-git submodule update --recursive --remote
-
-# Commit the updated references
-git add .
-git commit -m "update: all submodules to latest"
-git push origin main
-```
-
 ## Technology Stack
 
 ### Frontend Technologies
