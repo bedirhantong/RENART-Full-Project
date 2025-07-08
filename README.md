@@ -206,63 +206,12 @@ git push origin main
 - Comprehensive error handling
 - Easy local development setup
 
-## Contributing
-
-### Code Style
-- Follow existing code conventions
-- Use TypeScript for type safety
-- Write meaningful commit messages
-- Include tests for new features
-
-### Pull Request Process
-1. Fork the specific component repository
-2. Create a feature branch
-3. Make your changes with tests
-4. Submit a pull request with detailed description
-
-## Deployment
-
 ### Current Status
 - **Online Store**: ✅ Deployed on Vercel - [https://renart-online-store.vercel.app/](https://renart-online-store.vercel.app/)
 - **Backend API**: ⚠️ Not deployed - Required for full functionality
 - **Vendor Panel**: ⚠️ Not deployed - Depends on backend deployment
 
-### Production Environment
-- **Frontend**: Vercel or Netlify
-- **Backend**: Railway, Heroku, or DigitalOcean
-- **Database**: MongoDB Atlas
-- **CDN**: Cloudinary for image optimization
-
-### Deployment Priority
-To complete the full platform deployment:
-
-1. **Deploy Backend API** (High Priority)
-   - Set up MongoDB Atlas database
-   - Deploy to Railway or similar service
-   - Configure environment variables
-   - Test API endpoints
-
-2. **Deploy Vendor Panel** (Medium Priority)
-   - Deploy to Vercel/Netlify
-   - Connect to deployed backend
-   - Configure authentication
-   - Test vendor workflows
-
-3. **Connect Online Store to Live Backend** (Medium Priority)
-   - Update API URL in online store
-   - Replace mock data with real API calls
-   - Test user authentication and data flow
-
-### Environment Variables
-Ensure all required environment variables are configured:
-- Database connection strings
-- JWT secrets
-- API keys for third-party services
-- Frontend/backend URLs
-- Image upload service credentials
-
 ## Screenshots
-
 
 | Store Home | Products | Favorites | Dashboard |
 |---|---|---|---|
